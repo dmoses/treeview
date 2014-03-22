@@ -34,10 +34,11 @@ function islandora_treeview_sync() {
   $objects = $collection_object->repository->ri->sparqlQuery($query, 'unlimited');
   $dirstring = '';
   $filestring = '';
+  /* ideally these should be config options in the admin screen */
   $collection_types = array(
-    'islandora:collectionCModel',
-    'islandora:criticalEditionContainerCModel',
-    'islandora:versionableObjectCModel',
+    'islandora:newspaperCModel',
+    'islandora:newspaperIssueCModel',
+    'islandora:newspaperPageCModel',
   );
   foreach ($objects as $object) {
     $rel = htmlentities($path . $object['label']['value']);
